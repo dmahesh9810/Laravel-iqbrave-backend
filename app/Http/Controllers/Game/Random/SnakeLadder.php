@@ -812,7 +812,7 @@ class SnakeLadder extends Controller
                     ]);
                 } else {
                     if (($snakeladder->bot + $botRandom) === 100) {
-                        
+
                         $snakeladder->bot = $saveBot;
                         $snakeladder->bot_random = $botRandom;
                         $snakeladder->active = "0";
@@ -1006,7 +1006,7 @@ class SnakeLadder extends Controller
                     if (($snakeladder->player + $playerRandom) === 100) {
 
                         $balance = Balance::where('user_id', $request->user()->id)->first();
-                        $gameType = $snakeladder->game->game_type;
+                        $gameType = $snakeladder->game_type;
                         $balance->$gameType = $balance->$gameType + ($snakeladder->stake * 2);
                         $balance->save();
 
