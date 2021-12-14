@@ -14,24 +14,24 @@ class UserSeeder extends Seeder
         $admin=User::create([
             'firstname'=>'mahesh',
             'lastname'=>'dissanayaka',
-            'email'=>'admin@gmail.com',
+            'email'=>'dmahesh9810@gmail.com',
             'country'=>'srilanka',
             'city'=>'buttala',
             'mobile'=>'0773355669',
             'email_verified_at' => now(),
-            'password'=>Hash::make('password')
+            'password'=>Hash::make('mac@iqbrave9895&&')
         ]);
         $admin->assignRole('ROLE_ADMIN');
 
         $moderator=User::create([
             'firstname'=>'sachi',
             'lastname'=>'herath',
-            'email'=>'sachi@gmail.com',
+            'email'=>'sachiherath507@gmail.com',
             'country'=>'india',
             'city'=>'bandarawela',
             'mobile'=>'0773355667',
             'email_verified_at' => now(),
-            'password'=>Hash::make('password')
+            'password'=>Hash::make('mac@brave507&&')
         ]);
         $moderator->assignRole('ROLE_MODERATOR');
     }
