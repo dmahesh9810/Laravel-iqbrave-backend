@@ -33,14 +33,16 @@ Route::get('gsg', [GsgController::class, 'getGSG']);
 Route::post('email/verification-notification', [EmailVerificationController::class, 'sendVerificationEmail'])->middleware('auth:sanctum');
 Route::get('verify-email/{id}/{hash}', [EmailVerificationController::class, 'verify'])->name('verification.verify')->middleware('auth:sanctum');
 
-Route::middleware(['auth:sanctum', 'verified' ])->group(function (){
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    Route::post('sellcoin', SellCoinController::class);
 
     Route::get("email/verification-notification-check", [EmailVerificationController::class, 'emailCheck']);
 });
 
 Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::post('sellcoin', SellCoinController::class);
+
 
 
     Route::post("userlogout", LogoutController::class);
@@ -87,8 +89,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('profile-update', ProfileUpdateController::class,);
     Route::get('user', ProfileController::class,);
-
-
 });
 
 

@@ -49,7 +49,7 @@ class QuestionsGameController extends Controller
                     } else {
                         return response()->json([
                             'Quiz' => $Quiz,
-                            'massage' => "no",
+                            'massage' => "No Question",
                             // 'massage' => $Quiz,
                             // 'question' => $question,
                             'status' => 201,
@@ -131,7 +131,7 @@ class QuestionsGameController extends Controller
 
                     return response()->json([
                         'Quiz' => $Quiz,
-                        'massage' => "no",
+                        'massage' => "No Question",
                         'status' => 201,
                     ]);
                 }
