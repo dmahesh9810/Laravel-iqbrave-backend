@@ -20,7 +20,7 @@ class MatchNumber extends Controller
                 $balance->$coinType = $balance->$coinType - $request->stake;
                 $balance->save();
 
-                $systemRandom = random_int(1, 4);
+                $systemRandom = random_int(1, 10);
 
                 $matchNumber = new ModelsMatchNumber();
                 $matchNumber->user_id = $request->user()->id;
@@ -53,7 +53,7 @@ class MatchNumber extends Controller
 
         if ($matchNumber->player_click !== 2 && $matchNumber->player_click !== 3 && $matchNumber->player_click == $request->player_click && $matchNumber->user_id == $request->user()->id) {
 
-            $playerRandom = random_int(1, 4);
+            $playerRandom = random_int(1, 10);
             if ($playerRandom === $matchNumber->system_random) {
 
                 $coinType = $matchNumber->coin_type;
@@ -98,7 +98,7 @@ class MatchNumber extends Controller
 
         if ($matchNumber->player_click !== 2 && $matchNumber->player_click !== 3 && $matchNumber->player_click == $request->player_click && $matchNumber->user_id == $request->user()->id) {
 
-            $botRandom = random_int(1, 4);
+            $botRandom = random_int(1, 10);
             if ($botRandom === $matchNumber->system_random) {
 
                 $matchNumber->bot_random = $botRandom;
