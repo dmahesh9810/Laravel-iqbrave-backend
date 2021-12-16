@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Cashier\CheckOutBalance;
 use App\Http\Controllers\Cashier\GetCoinController;
 use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\Game\Knowledge\QuestionsController;
 use App\Http\Controllers\Game\Knowledge\QuestionsGameController;
 use App\Http\Controllers\Game\Random\MatchNumber;
@@ -25,6 +26,7 @@ Route::post("authusersignup", RegisterController::class);
 Route::post("authusersignin", LoginController::class);
 Route::post('frogot-password', [NewPasswordController::class, 'frogotPassword']);
 Route::post('reset-password', [NewPasswordController::class, 'reset']);
+Route::post('feedback', FeedBackController::class);
 
 Route::get('gsg', [GsgController::class, 'getGSG']);
 
