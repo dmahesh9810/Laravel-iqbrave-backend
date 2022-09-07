@@ -25,7 +25,7 @@ class RegisterController extends Controller
         ]);
 
         $balance = new Balance();
-        
+
 
         $balance->user_id = $user->id;
         $balance->save();
